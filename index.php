@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer ></script>
     <script src="./assets/js/init-alpine.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer ></script>
     <script src="./assets/js/charts-lines.js" defer></script>
-    <script src="./assets/js/charts-pie.js" defer></script>
+    <script src="./assets/js/charts-pie.js" defer></script> -->
   </head>
   <body>
     <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }" >
@@ -95,7 +95,11 @@
                     <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                   </svg>
                 </div>
-                <input class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input" type="text" placeholder="Search for projects" aria-label="Search" />
+                <form method="POST" action="config/insertData.php" id="inputForm">
+                  <input id="Nis" nama="Nis" class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input" type="text" placeholder="Scan Pickup Card" autofocus />
+                  <input id="Status" nama="Status" value="Waiting at The Pick-Up Point" hidden class="w-full pl-8 pr-2 text-sm text-gray-700 placeholder-gray-600 bg-gray-100 border-0 rounded-md dark:placeholder-gray-500 dark:focus:shadow-outline-gray dark:focus:placeholder-gray-600 dark:bg-gray-700 dark:text-gray-200 focus:placeholder-gray-500 focus:bg-white focus:border-purple-300 focus:outline-none focus:shadow-outline-purple form-input" type="text" />
+                  <button type="submit" class="btn btn-primary" name="submit" hidden>Tambah</button>
+                </form>
               </div>
             </div>
             <ul class="flex items-center flex-shrink-0 space-x-6">
@@ -117,6 +121,7 @@
             </ul>
           </div>
         </header>
+        <div class="alert alert-success text-center pesanTambah" role="alert" style="display:none;">Data berhasil di tambah.</div>
         <main class="h-full overflow-y-auto">
           <div class="container px-6 mx-auto grid">
             <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">Data Scanning Pickup Card</h2>
@@ -196,60 +201,81 @@
       </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    <script src="assets/js/jquery.min.js"></script>
     <script>
-        // load dokumen HTML
-        $(document).ready(function() {
+      $(document).ready(function(){
+        loadData()
 
-            // load data ajax
-            loadData()
+        // $('form').on('submit', function(e){
+        //   e.preventDefault()
 
-            function loadData() {
+        //   $.ajax({
+        //     type:$(this).attr('method'),
+        //     url:$(this).attr('action'),
+        //     data:$(this).serialize(),
+        //     success:function(){
+        //       loadData()
+        //       resetForm()
+        //     }
+        //   })
+        // })
 
-                $.ajax({
-                    url: 'config/getData.php',
-                    type: 'GET',
-                    success: function(data) {
-                        $("#mainContent").html(data);
-
-                        //cek jika menekan tombol hapus
-                        $('.hapusData').click(function(e) {
-
-                            if (confirm('Apakah anda yakin untuk hapus data?') == true) {
-
-                                //fungsi e.preventDefault() dalam studi kasus ini di gunakan agar tetap berada pada file pasien.php
-                                e.preventDefault()
-
-                                //lakukan ajax
-                                $.ajax({
-
-                                    //gunakan method GET
-                                    type: 'GET',
-
-                                    //ambil attribute pada href yang berada pada file getData.php pada variabel $link_delete
-                                    url: $(this).attr('href'),
-
-                                    //cek jika success
-                                    success: function() {
-                                        //load data menggunakan AJAX
-                                        loadData()
-                                    }
-                                })
-
-                                //cek jika data tidak jadi di hapus
-                            } else {
-                                //jangan hapus tetapkan di file pasien.php
-                                e.preventDefault()
-
-                            }
-
-                        })
-                    }
-                })
-
+        $('#inputForm').submit(function(event){
+          event.preventDefault();
+          var $form = $(this);
+  
+          $.ajax({
+            type: 'POST',
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            success: function(data) {
+              // Do something with the response
+              loadData(),
+              resetForm()
+            },
+            error: function(error) {
+              // Do something with the error
             }
           });
+        });
+      })
+
+      function loadData(){
+        $.ajax({
+          url: 'config/getData.php',
+          type:'get',
+          success:function(data){
+            $('#mainContent').html(data)
+            $('.hapusData').click(function(e){
+              e.preventDefault()
+
+              $.ajax({
+                type:'get',
+                url:$(this).attr('href'),
+                success:function(){
+                  loadData()
+               }
+             })
+            })
+
+            $('.updateData').click(function(e){
+              e.preventDefault()
+              $('[name=nama]').val($(this).attr('nama'))
+              $('[name=alamat]').val($(this).attr('alamat'))
+              $('form').attr('action', $(this).attr('href'))
+
+
+            })
+          }
+        })
+      }
+
+      function resetForm(){
+        $('[type=text]').val('')
+        $('form').attr('action', 'config/insertData.php')
+      }
+
     </script>
+    
   </body>
 </html>
