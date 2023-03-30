@@ -1,7 +1,17 @@
 <?php
-include_once 'connect.php';
 
-$nis= $_POST['Nis'];
-$status = $_POST['Status'];
-mysqli_query($database, "INSERT INTO tbl_scan VALUES('$nis', '$status', NOW())");
+    include ('connect.php');
+
+    // print_r($_POST);
+
+    $nis    = $_POST['nis'];
+    $status = $_POST['status'];
+
+    $sql = "INSERT INTO tbl_scan (NIS, STATUS, TIMESCAN) VALUE ('$nis', '$status', now())";
+
+    if (mysqli_query($database,$sql)) {
+        echo "Success Added";
+    } else {
+        echo "Not Added";
+    }
 ?>
