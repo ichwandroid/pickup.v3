@@ -111,7 +111,7 @@
     <main class="container my-3">
         <div class="col-sm-8 py-3 mx-auto">
             <p class="fs-5">Anak Saleh Elementary School</p>
-            <p>From the top down, you'll see a dark navbar, light navbar and a responsive navbar—each with offcanvases built in. Resize your browser window to the large breakpoint to see the toggle for the offcanvas.</p>
+            <p>This application is used to provide information to teachers and students that parents / shuttle students are already at school. give us a suggestion so that this facility can be of benefit to all members of the Anak Saleh Elementary School.</p>
             <p>
             <div class="input-group mb-3">
                 <input type="text" id="q" name="q" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="button-addon2" autocomplete="off">
