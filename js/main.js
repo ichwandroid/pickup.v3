@@ -15,10 +15,10 @@ $(document).ready(function () {
       $("#msgReg").html(
         "<p class='text-center alert alert-success'>" + data + "</p>"
       );
-      $("#msgReg").slideDown(1400);
+      $("#msgReg").slideDown(900);
       setTimeout(function () {
         $("#msgReg").slideUp(900);
-      }, 900);
+      }, 2000);
     });
   });
   // search bar

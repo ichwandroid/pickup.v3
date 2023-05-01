@@ -1,13 +1,13 @@
 <?php require_once "class.php";
-if(isset($_POST['q'])){
+if (isset($_POST['q'])) {
 	$q = $_POST['q'];
-	$q = "%".$q."%";
+	$q = "%" . $q . "%";
 	$usr = new user;
 	$data = $usr->search($q);
 	echo $data;
 }
 ?>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	function get_edit_id(){
 		let url = new URLSearchParams(window.location.search);
 			let id = url.get('id');
@@ -67,5 +67,5 @@ var id = $(this).attr('id');
 			},900)
 	  }
   });
-});
+}); -->
 </script>

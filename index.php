@@ -39,6 +39,7 @@
 </svg>
 
 <body>
+    <div id='msgReg' class="position-fixed bottom-0 end-0 mb-3 me-3"></div>
     <header class="p-3 text-bg-dark fixed-top">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -53,7 +54,7 @@
                 <form action="" id="regForm" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-qr-code-scan"></i></span>
-                        <input type="text" id="nis" name="nis" class="form-control form-control-1" placeholder="Scan..." aria-label="scan" aria-describedby="basic-addon1" autofocus>
+                        <input type="text" id="nis" name="nis" class="form-control form-control-1" placeholder="Scan..." aria-label="scan" aria-describedby="basic-addon1" autocomplete="off" autofocus>
                         <input type="text" id="status" name="status" value='<span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">Ditunggu Orang Tua</span>' hidden>
                         <input type="submit" id="btnPost" value="Submit" class="btn btn-warning">
                     </div>
@@ -113,18 +114,18 @@
             <p>From the top down, you'll see a dark navbar, light navbar and a responsive navbar—each with offcanvases built in. Resize your browser window to the large breakpoint to see the toggle for the offcanvas.</p>
             <p>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <span class="input-group-text" id="basic-addon2">Search</span>
+                <input type="text" id="q" name="q" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="button-addon2" autocomplete="off">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
             </div>
             </p>
         </div>
         <div class="container-fluid pb-3">
             <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
                 <div class="bg-body-tertiary border rounded-3 p-3">
-                    Notice !!!
-                    <br><br><br><br><br><br><br><br><br><br>
+                    <h6 class='border-bottom pb-2 mb-0'>Notice !!!!</h6>
                 </div>
                 <div class="bg-body-tertiary border rounded-3 p-3">
+                    <div id="msg" class='mx-auto'></div>
                     <div id="table"></div>
                 </div>
             </div>
