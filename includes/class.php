@@ -1,6 +1,7 @@
 <?php require_once "db.php";
 class user extends db
 {
+	// insert data
 	public function insert($n, $s)
 	{
 		$query = "INSERT INTO tbl_scan(NIS,STATUS,TIMESCAN) VALUES(?,?,now()) ";
@@ -9,15 +10,8 @@ class user extends db
 			echo "Registered Successfully!";
 		}
 	}
-	// public function get_row($id)
-	// {
-	// 	$query = "SELECT * FROM users WHERE id = ? ";
-	// 	$stmt = $this->connect()->prepare($query);
-	// 	$stmt->execute([$id]);
-	// 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-	// 		return $row;
-	// 	}
-	// }
+
+	// load data
 	public function load()
 	{
 		$query = "SELECT * FROM tbl_scan JOIN tbl_siswa ON tbl_scan.NIS = tbl_siswa.NIS ORDER BY tbl_scan.TIMESCAN DESC";
@@ -42,16 +36,8 @@ class user extends db
 		return $out;
 		return $out;
 	}
-	// update data
-	// public function update($f, $l, $w, $c, $e, $id)
-	// {
-	// 	$query = "UPDATE users SET first = ?,last = ?,work = ?,city=?,email=? where id = ? ";
-	// 	$stmt = $this->connect()->prepare($query);
-	// 	if ($stmt->execute([$f, $l, $w, $c, $e, $id])) {
-	// 		echo "Data updated! <a href='index.php'>view</a>";
-	// 	}
-	// }
-	//user search results
+
+	// search data
 	public function search($text)
 	{
 		$text = strtolower($text);
@@ -76,13 +62,4 @@ class user extends db
 		}
 		return $out;
 	}
-	// public function delete($id)
-	// {
-	// 	$query = "DELETE FROM users WHERE id = ?";
-	// 	$stmt = $this->connect()->prepare($query);
-	// 	if ($stmt->execute([$id])) {
-	// 		echo "1 record deleted.";
-	// 	}
-	// }
-	//end of class
 }
