@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pickup Student V.3</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
-    <script src="js/color-modes.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
+    <script src="../js/color-modes.js"></script>
     <style>
         body {
             min-height: 75rem;
@@ -50,15 +50,6 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="#" class="nav-link px-2 text-secondary" style="font-weight: bold;">Pickup Student V.3</a></li>
                 </ul>
-
-                <form action="" id="regForm" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                    <div class="input-group">
-                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-qr-code-scan"></i></span>
-                        <input type="text" id="nis" name="nis" class="form-control form-control-1" placeholder="Scan..." aria-label="scan" aria-describedby="basic-addon1" autocomplete="off" autofocus>
-                        <input type="text" id="status" name="status" value='<span class="badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill">Ditunggu Orang Tua</span>' hidden>
-                        <input type="submit" id="btnPost" value="Submit" class="btn btn-warning">
-                    </div>
-                </form>
 
                 <div class="dropdown me-1">
                     <div class="text-end">
@@ -112,12 +103,6 @@
         <div class="col-sm-8 py-3 mx-auto">
             <p class="fs-5">Anak Saleh Elementary School</p>
             <p>This application is used to provide information to teachers and students that parents / shuttle students are already at school. give us a suggestion so that this facility can be of benefit to all members of the Anak Saleh Elementary School.</p>
-            <p>
-            <div class="input-group mb-3">
-                <input type="text" id="q" name="q" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="button-addon2" autocomplete="off">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-            </div>
-            </p>
         </div>
         <div class="container-fluid pb-3">
             <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
@@ -131,9 +116,15 @@
             </div>
         </div>
     </main>
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script>
+    $(document).ready(function () {
+        setInterval(() => {
+            $("#table").load("../includes/room/1a.php");
+        }, 900);
+    });
+</script>
 
 </html>
