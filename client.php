@@ -24,6 +24,13 @@
       }
     }
 
+    @media (max-width: 700px) {
+
+      #bd-theme {
+        visibility: hidden;
+      }
+    }
+
     .b-example-divider {
       width: 100%;
       height: 3rem;
@@ -130,6 +137,26 @@
                   <option value="1 B">1 B</option>
                   <option value="1 C">1 C</option>
                   <option value="1 D">1 D</option>
+                  <option value="2 A">2 A</option>
+                  <option value="2 B">2 B</option>
+                  <option value="2 C">2 C</option>
+                  <option value="2 D">2 D</option>
+                  <option value="3 A">3 A</option>
+                  <option value="3 B">3 B</option>
+                  <option value="3 C">3 C</option>
+                  <option value="3 D">3 D</option>
+                  <option value="4 A">4 A</option>
+                  <option value="4 B">4 B</option>
+                  <option value="4 C">4 C</option>
+                  <option value="4 D">4 D</option>
+                  <option value="5 A">5 A</option>
+                  <option value="5 B">5 B</option>
+                  <option value="5 C">5 C</option>
+                  <option value="5 D">5 D</option>
+                  <option value="6 A">6 A</option>
+                  <option value="6 B">6 B</option>
+                  <option value="6 C">6 C</option>
+                  <option value="6 D">6 D</option>
                 </select>
               </li>
             </ul>
@@ -188,14 +215,11 @@
             <p>
               <a class="btn btn-primary" href="/docs/5.3/components/navbar/" role="button">View navbar docs &raquo;</a>
             </p>
-          </div>
-          <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
-            <div class="bg-body-tertiary border rounded-3 p-3">
-              <h6 class='border-bottom pb-2 mb-0'>Notice !!!!</h6>
-            </div>
-            <div class="bg-body-tertiary border rounded-3 p-3">
-              <div id="msg" class='mx-auto'></div>
-              <div id="table"></div>
+            <div class="d-grid gap-3">
+              <div class="bg-body-tertiary border rounded-3 p-3">
+                <div id="msg" class='mx-auto'></div>
+                <div id="table"></div>
+              </div>
             </div>
           </div>
         </div>
