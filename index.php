@@ -62,7 +62,7 @@
 
                 <div class="dropdown me-1">
                     <div class="text-end">
-                        <button class="btn btn-outline-info dropdown-toggle align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+                        <button class="btn btn-danger align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
                             <svg class="bi my-1 theme-icon-active" width="1em" height="1em" fill="currentcolor">
                                 <use href="#circle-half"></use>
                             </svg>
@@ -105,6 +105,7 @@
                         </ul>
                     </div>
                 </div>
+                <a href="client.php" class="btn btn-info align-items-center"><i class="bi bi-funnel-fill"></i></a>
             </div>
         </div>
     </header>

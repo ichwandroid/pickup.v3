@@ -128,7 +128,7 @@
           </button>
 
           <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-            <a href="client.php" class="nav-link px-2 col-lg-3 text-secondary" style="font-weight: bold;">Pickup Student V.3</a>
+            <a href="index.php" class="nav-link px-2 col-lg-3 text-secondary" style="font-weight: bold;">Pickup Student V.3</a>
             <ul class="navbar-nav col-lg-6 justify-content-lg-center">
               <li class="nav-item dropdown">
                 <select id="classroom" name="classroom" class="form-select" aria-label="Default select example">
