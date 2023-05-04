@@ -8,8 +8,9 @@ $b = mysqli_fetch_array($a, MYSQLI_ASSOC)
     Name : <input type="text" name="name" placeholder="Insert Name" value="<?= $b['NAMA_LENGKAP']; ?>"><br><br>
     Status :
     <select name="status">
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
+        <option value='<span class="badge bg-success-subtle border border-success-subtle text-success-emphasis rounded-pill">Menuju Titik Penjemputan</span>'>Confirm
+        </option>
+        <option value='<span class="badge bg-warning-subtle border border-warning-subtle text-warning-emphasis rounded-pill">Sedang Mengerjakan Tugas</span>'>Hold</option>
     </select><br><br>
     <input type="submit" name="update" value="Update">
     <input type="reset" name="cancel" value="Cancel">

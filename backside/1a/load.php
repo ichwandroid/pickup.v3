@@ -1,7 +1,7 @@
 <?php
 include '../config.php';
-$text = "1 A - ZAINAB R.A";
-$sql = mysqli_query($conn, "SELECT * FROM tbl_scan JOIN tbl_siswa ON tbl_scan.NIS = tbl_siswa.NIS WHERE KELAS LIKE '$text' ORDER BY tbl_scan.TIMESCAN DESC");
+$text = "1 a";
+$sql = mysqli_query($conn, "SELECT * FROM tbl_scan JOIN tbl_siswa ON tbl_scan.NIS = tbl_siswa.NIS WHERE KELAS LIKE '$text%' ORDER BY tbl_scan.STATUS ASC");
 foreach ($sql as $row) {
 ?>
     <tr>
