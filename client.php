@@ -10,92 +10,14 @@
   <link rel="stylesheet" href="css/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
   <script src="js/color-modes.js"></script>
   <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-
-    @media (max-width: 700px) {
-
-      #bd-theme {
-        visibility: hidden;
-      }
-    }
-
-    .b-example-divider {
-      width: 100%;
-      height: 3rem;
-      background-color: rgba(0, 0, 0, .1);
-      border: solid rgba(0, 0, 0, .15);
-      border-width: 1px 0;
-      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
-
-    .b-example-vr {
-      flex-shrink: 0;
-      width: 1.5rem;
-      height: 100vh;
-    }
-
-    .bi {
-      vertical-align: -.125em;
-      fill: currentColor;
-    }
-
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-    }
-
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .btn-bd-primary {
-      --bd-violet-bg: #712cf9;
-      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-      --bs-btn-font-weight: 600;
-      --bs-btn-color: var(--bs-white);
-      --bs-btn-bg: var(--bd-violet-bg);
-      --bs-btn-border-color: var(--bd-violet-bg);
-      --bs-btn-hover-color: var(--bs-white);
-      --bs-btn-hover-bg: #6528e0;
-      --bs-btn-hover-border-color: #6528e0;
-      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-      --bs-btn-active-color: var(--bs-btn-hover-color);
-      --bs-btn-active-bg: #5a23c8;
-      --bs-btn-active-border-color: #5a23c8;
-    }
-
-    .bd-mode-toggle {
-      z-index: 1500;
-    }
-
     body {
-      padding-bottom: 20px;
+      min-height: 75rem;
+      padding-top: 4.5rem;
     }
 
-    .navbar {
-      margin-bottom: 20px;
+    .form-control-1:focus {
+      border-color: #fff;
+      box-shadow: 0px 0px 0px #fff inset, 0px 0px 0px #fff;
     }
   </style>
 </head>
@@ -118,110 +40,84 @@
 
 <body>
   <div id='msgReg' class="position-fixed bottom-0 end-0 mb-3 me-3"></div>
-  <main>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-danger align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em" fill="currentcolor">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="light" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="dark" aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center rounded-2 active" data-bs-theme-value="auto" aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Eighth navbar example">
     <div class="container">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary rounded" aria-label="Thirteenth navbar example">
-        <div class="container-fluid">
-          <i class="bi bi-p-circle-fill" style="font-size: 25px;"></i>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+      <a class="navbar-brand" href="#"><i class="bi bi-p-circle-fill" style="font-size: 25px;"></i></a>
+      <a href="#" class="nav-link text-secondary" style="font-weight: bold;">Pickup Student V.3</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-            <a href="index.php" class="nav-link px-2 col-lg-3 text-secondary" style="font-weight: bold;">Pickup Student V.3</a>
-            <ul class="navbar-nav col-lg-6 justify-content-lg-center">
-              <li class="nav-item dropdown">
-                <select id="classroom" name="classroom" class="form-select" aria-label="Default select example">
-                  <option selected>Classroom</option>
-                  <option value="1 A">1 A</option>
-                  <option value="1 B">1 B</option>
-                  <option value="1 C">1 C</option>
-                  <option value="1 D">1 D</option>
-                  <option value="2 A">2 A</option>
-                  <option value="2 B">2 B</option>
-                  <option value="2 C">2 C</option>
-                  <option value="2 D">2 D</option>
-                  <option value="3 A">3 A</option>
-                  <option value="3 B">3 B</option>
-                  <option value="3 C">3 C</option>
-                  <option value="3 D">3 D</option>
-                  <option value="4 A">4 A</option>
-                  <option value="4 B">4 B</option>
-                  <option value="4 C">4 C</option>
-                  <option value="4 D">4 D</option>
-                  <option value="5 A">5 A</option>
-                  <option value="5 B">5 B</option>
-                  <option value="5 C">5 C</option>
-                  <option value="5 D">5 D</option>
-                  <option value="6 A">6 A</option>
-                  <option value="6 B">6 B</option>
-                  <option value="6 C">6 C</option>
-                  <option value="6 D">6 D</option>
-                </select>
-              </li>
-            </ul>
-            <div class="d-lg-flex col-lg-3 justify-content-lg-end">
-              <button class="btn align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-                <svg class="bi my-1 theme-icon-active" width="1em" height="1em" fill="currentcolor">
-                  <use href="#circle-half"></use>
-                </svg>
-                <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="bd-theme-text">
-                <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="light" aria-pressed="false">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
-                      <use href="#sun-fill"></use>
-                    </svg>
-                    Light
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                      <use href="#check2"></use>
-                    </svg>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="dark" aria-pressed="false">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
-                      <use href="#moon-stars-fill"></use>
-                    </svg>
-                    Dark
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                      <use href="#check2"></use>
-                    </svg>
-                  </button>
-                </li>
-                <li>
-                  <button type="button" class="dropdown-item d-flex align-items-center rounded-2 active" data-bs-theme-value="auto" aria-pressed="true">
-                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
-                      <use href="#circle-half"></use>
-                    </svg>
-                    Auto
-                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                      <use href="#check2"></use>
-                    </svg>
-                  </button>
-                </li>
-              </ul>
-            </div>
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+        <form action="" id="regForm" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <div class="input-group">
+            <input type="text" id="q" name="q" class="form-control" placeholder="what do you want..." aria-label="search" aria-describedby="button-addon2" autocomplete="off">
+            <button class="btn btn-warning" type="button" id="button-addon2">Search</button>
           </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-3">
+    <!-- <div class="col-sm-8 py-3 mx-auto">
+      </div> -->
+    <div class="container-fluid pb-3">
+      <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
+        <div class="bg-body-tertiary border rounded-3 p-3">
+          <h6 class='border-bottom pb-2 mb-0'>Notice !!!!</h6>
+          <p>This application is used to provide information to teachers and students that parents / shuttle students are already at school. give us a suggestion so that this facility can be of benefit to all members of the Anak Saleh Elementary School.</p>
         </div>
-      </nav>
-
-      <div>
-        <div class="bg-body-tertiaryp-5 rounded">
-          <div class="col-sm-8 mx-auto">
-            <p class="fs-5">Anak Saleh Elementary School</p>
-            <p>This application is used to provide information to teachers and students that parents / shuttle students are already at school. give us a suggestion so that this facility can be of benefit to all members of the Anak Saleh Elementary School.</p>
-            <p>
-              <a class="btn btn-primary" href="/docs/5.3/components/navbar/" role="button">View navbar docs &raquo;</a>
-            </p>
-            <div class="d-grid gap-3">
-              <div class="bg-body-tertiary border rounded-3 p-3">
-                <div id="msg" class='mx-auto'></div>
-                <div id="table"></div>
-              </div>
-            </div>
-          </div>
+        <div class="bg-body-tertiary border rounded-3 p-3">
+          <div id="msg" class='mx-auto'></div>
+          <div id="table"></div>
         </div>
       </div>
     </div>
@@ -229,31 +125,6 @@
   <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function() {
-    // $("#table").load("includes/load.php");
-    $("#classroom").change(function() {
-      $("#msg").hide();
-      let classroom = $("#classroom").val();
-      if (classroom != "") {
-        $("#table").html("");
-        setInterval(() => {
-          $.ajax({
-            type: "POST",
-            url: "includes/select.php",
-            data: {
-              classroom: classroom
-            },
-            success: function(data) {
-              $("#table").html(data);
-            },
-          });
-        }, 900);
-      } else {
-        // $("#table").load("includes/load.php");
-      }
-    });
-  })
-</script>
+<script src="js/main.js"></script>
 
 </html>

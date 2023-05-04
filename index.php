@@ -40,17 +40,62 @@
 
 <body>
     <div id='msgReg' class="position-fixed bottom-0 end-0 mb-3 me-3"></div>
-    <header class="p-3 text-bg-dark fixed-top">
+
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-danger align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <svg class="bi my-1 theme-icon-active" width="1em" height="1em" fill="currentcolor">
+                <use href="#circle-half"></use>
+            </svg>
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="bd-theme-text">
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="light" aria-pressed="false">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
+                        <use href="#sun-fill"></use>
+                    </svg>
+                    Light
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="dark" aria-pressed="false">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
+                        <use href="#moon-stars-fill"></use>
+                    </svg>
+                    Dark
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item d-flex align-items-center rounded-2 active" data-bs-theme-value="auto" aria-pressed="true">
+                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
+                        <use href="#circle-half"></use>
+                    </svg>
+                    Auto
+                    <svg class="bi ms-auto d-none" width="1em" height="1em">
+                        <use href="#check2"></use>
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Eighth navbar example">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <i class="bi bi-p-circle-fill" style="font-size: 25px;"></i>
-                </a>
+            <a class="navbar-brand" href="#"><i class="bi bi-p-circle-fill" style="font-size: 25px;"></i></a>
+            <a href="#" class="nav-link text-secondary" style="font-weight: bold;">Pickup Student V.3</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-secondary" style="font-weight: bold;">Pickup Student V.3</a></li>
+            <div class="collapse navbar-collapse" id="navbarsExample07">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
-
                 <form action="" id="regForm" method="post" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <div class="input-group">
                         <span class="input-group-text" id="basic-addon1"><i class="bi bi-qr-code-scan"></i></span>
@@ -59,60 +104,14 @@
                         <input type="submit" id="btnPost" value="Submit" class="btn btn-warning">
                     </div>
                 </form>
-
-                <div class="dropdown me-1">
-                    <div class="text-end">
-                        <button class="btn btn-danger align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
-                            <svg class="bi my-1 theme-icon-active" width="1em" height="1em" fill="currentcolor">
-                                <use href="#circle-half"></use>
-                            </svg>
-                            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="bd-theme-text">
-                            <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="light" aria-pressed="false">
-                                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
-                                        <use href="#sun-fill"></use>
-                                    </svg>
-                                    Light
-                                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                                        <use href="#check2"></use>
-                                    </svg>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center rounded-2" data-bs-theme-value="dark" aria-pressed="false">
-                                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
-                                        <use href="#moon-stars-fill"></use>
-                                    </svg>
-                                    Dark
-                                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                                        <use href="#check2"></use>
-                                    </svg>
-                                </button>
-                            </li>
-                            <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center rounded-2 active" data-bs-theme-value="auto" aria-pressed="true">
-                                    <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em" fill="currentcolor">
-                                        <use href="#circle-half"></use>
-                                    </svg>
-                                    Auto
-                                    <svg class="bi ms-auto d-none" width="1em" height="1em">
-                                        <use href="#check2"></use>
-                                    </svg>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="client.php" class="btn btn-info align-items-center"><i class="bi bi-funnel-fill"></i></a>
             </div>
         </div>
-    </header>
+    </nav>
+
     <main class="container my-3">
         <div class="col-sm-8 py-3 mx-auto">
-            <p class="fs-5">Anak Saleh Elementary School</p>
-            <p>This application is used to provide information to teachers and students that parents / shuttle students are already at school. give us a suggestion so that this facility can be of benefit to all members of the Anak Saleh Elementary School.</p>
+            <p class="fs-5">Welcome to...</p>
+            <p>Please find information about pick-up by writing anything below.</p>
             <p>
             <div class="input-group mb-3">
                 <input type="text" id="q" name="q" class="form-control" placeholder="Search..." aria-label="search" aria-describedby="button-addon2" autocomplete="off">
@@ -124,6 +123,7 @@
             <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
                 <div class="bg-body-tertiary border rounded-3 p-3">
                     <h6 class='border-bottom pb-2 mb-0'>Notice !!!!</h6>
+                    <p>This application is used to provide information to teachers and students that parents / shuttle students are already at school. give us a suggestion so that this facility can be of benefit to all members of the Anak Saleh Elementary School.</p>
                 </div>
                 <div class="bg-body-tertiary border rounded-3 p-3">
                     <div id="msg" class='mx-auto'></div>

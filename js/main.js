@@ -1,5 +1,7 @@
 $(document).ready(function () {
-  $("#table").load("includes/load.php");
+  setInterval(() => {
+    $("#table").load("includes/load.php");
+  }, 900);
   $("#regForm").submit(function (e) {
     e.preventDefault();
     $.ajax({

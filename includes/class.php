@@ -27,8 +27,8 @@ class user extends db
 			$waktu = $row['TIMESCAN'];
 			$out .= "<div class='d-flex text-body-secondary pt-3'><h2><i class='bi bi-person-badge-fill'></i></h2>
 			<div class='pb-3 mb-0 small lh-sm border-bottom w-100'><div class='d-flex justify-content-between'>
-			<strong class='text-gray-dark'>$nama</strong><a href='#'>$status</a></div>
-			<div class='d-flex justify-content-between'><span class='d-block'> $panggilan | $kelas</span><a href='#' style='text-decoration: none; color:gray; font-size:12px; padding-top:5px'>$waktu</a></div></div></div></div>";
+			<strong class='text-gray-dark'>$nama</strong><a>$status</a></div>
+			<div class='d-flex justify-content-between'><span class='d-block'> $panggilan | $kelas</span><a style='text-decoration: none; color:gray; font-size:12px; padding-top:5px'>$waktu</a></div></div></div></div>";
 		}
 		$out .= "</table>";
 		if ($stmt->rowCount() == 0) {
