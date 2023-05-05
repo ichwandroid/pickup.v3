@@ -19,6 +19,39 @@
             border-color: #fff;
             box-shadow: 0px 0px 0px #fff inset, 0px 0px 0px #fff;
         }
+
+        .navbar .megamenu {
+            padding: 1rem;
+        }
+
+        /* ============ desktop view ============ */
+        @media all and (min-width: 992px) {
+            .navbar .has-megamenu {
+                position: static !important;
+            }
+
+            .navbar .megamenu {
+                left: auto;
+                right: 18em;
+                width: 40%;
+                margin-top: 0;
+            }
+        }
+
+        /* ============ desktop view .end// ============ */
+
+        /* ============ mobile view ============ */
+        @media(max-width: 991px) {
+
+            .navbar.fixed-top .navbar-collapse,
+            .navbar.sticky-top .navbar-collapse {
+                overflow-y: auto;
+                max-height: 90vh;
+                margin-top: 10px;
+            }
+        }
+
+        /* ============ mobile view .end// ============ */
     </style>
 </head>
 
@@ -97,13 +130,64 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-list-nested"></i> Classroom</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                    <li class="nav-item dropdown has-megamenu">
+                        <button class="nav-link dropdown-toggle btn btn-dark" href="#" data-bs-toggle="dropdown"> Mega menu </button>
+                        <div class="dropdown-menu megamenu" role="menu">
+                            <div class="row g-3">
+                                <div class="col-lg-3 col-6">
+                                    <div class="col-megamenu">
+                                        <h6 class="title">Title Menu One</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                        </ul>
+                                    </div> <!-- col-megamenu.// -->
+                                </div><!-- end col-3 -->
+                                <div class="col-lg-3 col-6">
+                                    <div class="col-megamenu">
+                                        <h6 class="title">Title Menu Two</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                        </ul>
+                                    </div> <!-- col-megamenu.// -->
+                                </div><!-- end col-3 -->
+                                <div class="col-lg-3 col-6">
+                                    <div class="col-megamenu">
+                                        <h6 class="title">Title Menu Three</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                        </ul>
+                                    </div> <!-- col-megamenu.// -->
+                                </div>
+                                <div class="col-lg-3 col-6">
+                                    <div class="col-megamenu">
+                                        <h6 class="title">Title Menu Four</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a href="#">Custom Menu</a></li>
+                                        </ul>
+                                    </div> <!-- col-megamenu.// -->
+                                </div><!-- end col-3 -->
+                            </div><!-- end row -->
+                        </div> <!-- dropdown-mega-menu.// -->
                     </li>
                 </ul>
             </div>
