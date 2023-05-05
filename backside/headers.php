@@ -33,7 +33,7 @@
             .navbar .megamenu {
                 left: auto;
                 right: 18em;
-                width: 40%;
+                width: 30%;
                 margin-top: 0;
             }
         }
@@ -131,58 +131,72 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown has-megamenu">
-                        <button class="nav-link dropdown-toggle btn btn-dark" href="#" data-bs-toggle="dropdown"> Mega menu </button>
+                        <button class="nav-link dropdown-toggle btn btn-dark" href="#" data-bs-toggle="dropdown"><i class="bi bi-door-open"></i> Classroom </button>
                         <div class="dropdown-menu megamenu" role="menu">
                             <div class="row g-3">
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-4 col-6">
                                     <div class="col-megamenu">
-                                        <h6 class="title">Title Menu One</h6>
+                                        <h6 class="title"><i class="bi bi-1-circle"></i> Study Group</h6>
                                         <ul class="list-unstyled">
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="../1a/">1A - Shiddiq</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="../1b/">1B - Amanah</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">1C - Fathanah</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">1D - Tabligh</a></li>
                                         </ul>
                                     </div> <!-- col-megamenu.// -->
                                 </div><!-- end col-3 -->
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-4 col-6">
                                     <div class="col-megamenu">
-                                        <h6 class="title">Title Menu Two</h6>
+                                        <h6 class="title"><i class="bi bi-2-circle"></i> Study Group</h6>
                                         <ul class="list-unstyled">
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">2A - Nasionalis</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">2B - Demokratis</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">2C - Toleransi</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">2D - Patriotis</a></li>
                                         </ul>
                                     </div> <!-- col-megamenu.// -->
                                 </div><!-- end col-3 -->
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-4 col-6">
                                     <div class="col-megamenu">
-                                        <h6 class="title">Title Menu Three</h6>
+                                        <h6 class="title"><i class="bi bi-3-circle"></i> Study Group</h6>
                                         <ul class="list-unstyled">
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">3A - Simpati</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">3B - Empati</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">3C - Peduli</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">3D - Berbagi</a></li>
                                         </ul>
                                     </div> <!-- col-megamenu.// -->
                                 </div>
-                                <div class="col-lg-3 col-6">
+                                <div class="col-lg-4 col-6">
                                     <div class="col-megamenu">
-                                        <h6 class="title">Title Menu Four</h6>
+                                        <h6 class="title"><i class="bi bi-4-circle"></i> Study Group</h6>
                                         <ul class="list-unstyled">
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
-                                            <li><a href="#">Custom Menu</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">4A - Mandiri</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">4B - Teliti</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">4C - Berani</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">4D - Percaya Diri</a></li>
+                                        </ul>
+                                    </div> <!-- col-megamenu.// -->
+                                </div><!-- end col-3 -->
+                                <div class="col-lg-4 col-6">
+                                    <div class="col-megamenu">
+                                        <h6 class="title"><i class="bi bi-5-circle"></i> Study Group</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">5A - Berpikir Kritis</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">5B - Kolaboratif</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">5C - Komunikatif</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">5D - Kreatif</a></li>
+                                        </ul>
+                                    </div> <!-- col-megamenu.// -->
+                                </div>
+                                <div class="col-lg-4 col-6">
+                                    <div class="col-megamenu">
+                                        <h6 class="title"><i class="bi bi-6-circle"></i> Study Group</h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">6B - Infentif</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">6A - Inovatif</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">6C - Inspiratif</a></li>
+                                            <li><a class="dropdown-item d-flex align-items-center rounded-2" href="#">6D - Inisiatif</a></li>
                                         </ul>
                                     </div> <!-- col-megamenu.// -->
                                 </div><!-- end col-3 -->
