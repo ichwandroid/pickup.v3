@@ -33,7 +33,7 @@
             .navbar .megamenu {
                 left: auto;
                 right: 18em;
-                width: 30%;
+                width: 40%;
                 margin-top: 0;
             }
         }
