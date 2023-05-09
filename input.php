@@ -9,29 +9,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
     <script src="js/color-modes.js"></script>
-    <style>
-        html,
-        body {
-            height: 100%;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            background-color: #f5f5f5;
-        }
-
-        .form-signin {
-            max-width: 330px;
-            padding: 15px;
-        }
-
-        .form-signin .form-floating:focus-within {
-            z-index: 2;
-        }
-    </style>
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -50,7 +27,7 @@
     </symbol>
 </svg>
 
-<body class="bg-body-tertiary">
+<body>
     <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
         <button class="btn btn-danger align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
             <svg class="bi my-1 theme-icon-active" width="1em" height="1em" fill="currentcolor">
@@ -95,29 +72,91 @@
         </ul>
     </div>
 
-    <main class="form-signin w-100 m-auto">
-        <form>
-            <h1 class="h3 mb-3"><i class="bi bi-ev-front"></i> Pickup Student V.3</h1>
+    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-3 rounded-4 shadow">
+                <div class="modal-header pb-4 border-bottom-0">
+                    <h2 class="fw-bold mb-0 fs-2">Pickup Student V.3</h2>
+                </div>
 
-            <div class="list-group">
-                <input type="text" name="nis" id="nis" placeholder="Cari Siswa..." class="form-control" autocomplete="off">
+                <div class="modal-body p-3 pt-0">
+                    <div class="input-group">
+                        <input type="text" id="nis" name="nis" placeholder="Search..." aria-label="First name" class="form-control" autocomplete="off">
+                        <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
+                    </div>
+                    <ol class="list-group list-group-numbered" id="resultlist"></ol>
+                    <small><i>Silahkan ketik Nama Lengkap / Nama Panggilan / Kelas</i></small>
+                </div>
             </div>
-            <!-- <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-            </div> -->
+        </div>
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2023</p>
-        </form>
-    </main>
+        <script src="js/bootstrap.bundle.min.js"></script>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+<!-- 
+<input type="text" id="nis" name="nis" placeholder="Cari Siswa..." class="form-control" autocomplete="off" />
+<ol style="padding-left: 1px;" id="resultlist"></ol>
+<i>Silahkan ketik Nama Lengkap / Nama Panggilan / Kelas</i>
+ -->
+
+
+<script src="js/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajaxSetup({
+            cache: false
+        });
+        $('#nis').keyup(function() {
+            $('#resultlist').html('');
+            $('#state').val('');
+            var searchField = $('#nis').val();
+            var expression = new RegExp(searchField, "i");
+
+            $.getJSON('js/tbl_siswa.json', function(data) {
+                $.each(data, function(key, value) {
+                    if (value.NIS.search(expression) != -1 || value.KELAS.search(expression) != -1 || value.NAMA_LENGKAP.search(expression) != -1 || value.PANGGILAN.search(expression) != -1 || value.NAMA_KELAS.search(expression) != -1) {
+                        $('#resultlist').append(`
+                        <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action list-group-item-primary">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">` + value.PANGGILAN + `</div>
+                            ` + value.NAMA_LENGKAP + `
+                            </div>
+                            <span class="badge bg-primary rounded-pill">14</span>
+                            <span class="nama" hidden>` + value.NIS + `</span>
+                        </li>
+                        `);
+                    }
+                });
+            });
+        });
+
+        $('#resultlist').on('click', 'li', function() {
+            let nis = $(this).children('.nama').text();
+
+            $('#nis').val(nis);
+            $("#resultlist").html('');
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(200, function() {
+            $(this).remove();
+        });
+    }, 2000);
+</script>
+
+<!-- 
+<li class="list-group-item list-group-item-action list-group-item-secondary">
+    <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">` + value.PANGGILAN + `</h5><small> ` + value.KELAS + `-` + value.NAMA_KELAS + `</small>
+        <small class="badge bg-primary rounded-pill"> ` + value.NIS + `</small>
+    </div>
+    <p class="mb-1">` + value.NAMA_LENGKAP + `</p>
+    <span class="nama" hidden>` + value.NIS + `</span>
+</li>
+ -->
