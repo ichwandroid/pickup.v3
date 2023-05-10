@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-icons-1.10.5/font/bootstrap-icons.css">
     <script src="js/color-modes.js"></script>
+    <style>
+        .logo {
+            width: 120px;
+            height: auto;
+            padding-top: 20px;
+        }
+    </style>
 </head>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
@@ -79,14 +86,73 @@
                     <h2 class="fw-bold mb-0 fs-2">Pickup Student V.3</h2>
                 </div>
 
-                <div class="modal-body p-3 pt-0">
-                    <div class="input-group">
-                        <input type="text" id="nis" name="nis" placeholder="Search..." aria-label="First name" class="form-control" autocomplete="off">
-                        <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
+                <form action="" name="formName">
+                    <div class="modal-body p-3 pt-0">
+                        <div class="input-group">
+                            <input type="text" id="nis" name="nis" placeholder="Search..." aria-label="First name" class="form-control" autocomplete="off">
+                            <span class="input-group-text"><i class="bi bi-person-vcard"></i></span>
+                        </div>
+                        <ol class="list-group list-group-numbered" id="resultlist"></ol>
+                        <small><i>Silahkan ketik Nama Lengkap / Nama Panggilan / Kelas</i></small>
                     </div>
-                    <ol class="list-group list-group-numbered" id="resultlist"></ol>
-                    <small><i>Silahkan ketik Nama Lengkap / Nama Panggilan / Kelas</i></small>
-                </div>
+                    <div class="modal-body p-3 pt-0">
+                        <ul class="list-group">
+                            <li class="list-group-item list-group-item-action">
+                                <input class="form-check-input me-1" type="checkbox" value="" id="orangtua" name="orangtua" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;}">
+                                <label class="form-check-label stretched-link" for="orangtua">Dijemput Orang Tua</label>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                <input class="form-check-input me-1" type="checkbox" value="" id="antarjemput" name="antarjemput" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;}">
+                                <label class="form-check-label stretched-link" for="antarjemput">Ditunggu Team Antar Jemput</label>
+                            </li>
+                            <li class="list-group-item list-group-item-action">
+                                <input class="form-check-input me-1" type="checkbox" value="" id="ojol" name="ojol" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.orangtua.checked=false;myFunction();}">
+                                <label class="form-check-label stretched-link" for="ojol">Dijemput Ojek Online</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="modal-body p-3 pt-0" id="sharelink" style="display: none;">
+                        <label for="basic-url" class="form-label">Link Bagikan Perjalanan</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon3"><i class="bi bi-link"></i></span>
+                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                        </div>
+                        <div class="form-text" id="basic-addon4">
+                            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2">
+                                <div class="col">
+                                    <div class="card shadow-sm">
+                                        <img src="img/2.png" class="logo rounded mx-auto d-block" alt="">
+                                        <div class="card-body">
+                                            <p class="card-text">Dengan fitur Bantuan Darurat atau Call Emergency Hotline, kamu akan terhubung dengan unit...</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <a href="https://www.gojek.com/blog/gojek/fitur-bagikan-perjalanan/" target="_blank" type="button" class="btn btn-outline-info">Info</a>
+                                                </div>
+                                                <small class="text-body-secondary">@opsdanaksaleh</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="card shadow-sm">
+                                        <img src="img/1.png" class="logo rounded mx-auto d-block" alt="">
+                                        <div class="card-body">
+                                            <p class="card-text">Bagikan lokasi Anda kepada orang yang Anda cintai agar Anda dapat berkendaraan dengan aman dan nyaman...</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <a href="https://help.grab.com/driver/id-id/360021411912" target="_blank" type="button" class="btn btn-outline-info">Info</a>
+                                                </div>
+                                                <small class="text-body-secondary">@opsdanaksaleh</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
             </div>
         </div>
 
@@ -95,13 +161,6 @@
 </body>
 
 </html>
-
-<!-- 
-<input type="text" id="nis" name="nis" placeholder="Cari Siswa..." class="form-control" autocomplete="off" />
-<ol style="padding-left: 1px;" id="resultlist"></ol>
-<i>Silahkan ketik Nama Lengkap / Nama Panggilan / Kelas</i>
- -->
-
 
 <script src="js/jquery.min.js"></script>
 <script>
@@ -122,9 +181,9 @@
                         <li class="list-group-item d-flex justify-content-between align-items-start list-group-item-action list-group-item-primary">
                             <div class="ms-2 me-auto">
                             <div class="fw-bold">` + value.PANGGILAN + `</div>
-                            ` + value.NAMA_LENGKAP + `
+                            <small>` + value.NAMA_LENGKAP + `</small>
                             </div>
-                            <span class="badge bg-primary rounded-pill">14</span>
+                            <span class="badge bg-info-subtle border border-info-subtle text-info-emphasis rounded-pill">` + value.KELAS + `-` + value.NAMA_KELAS + `</span>
                             <span class="nama" hidden>` + value.NIS + `</span>
                         </li>
                         `);
@@ -150,13 +209,14 @@
     }, 2000);
 </script>
 
-<!-- 
-<li class="list-group-item list-group-item-action list-group-item-secondary">
-    <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">` + value.PANGGILAN + `</h5><small> ` + value.KELAS + `-` + value.NAMA_KELAS + `</small>
-        <small class="badge bg-primary rounded-pill"> ` + value.NIS + `</small>
-    </div>
-    <p class="mb-1">` + value.NAMA_LENGKAP + `</p>
-    <span class="nama" hidden>` + value.NIS + `</span>
-</li>
- -->
+<script>
+    function myFunction() {
+        var checkBox = document.getElementById("ojol");
+        var text = document.getElementById("sharelink");
+        if (checkBox.checked == true) {
+            sharelink.style.display = "block";
+        } else {
+            sharelink.style.display = "none";
+        }
+    }
+</script>
