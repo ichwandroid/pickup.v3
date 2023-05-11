@@ -86,7 +86,7 @@
                     <h2 class="fw-bold mb-0 fs-2">Pickup Student V.3</h2>
                 </div>
 
-                <form action="" name="formName">
+                <form action="" name="formName" id="altForm" method="post">
                     <div class="modal-body p-3 pt-0">
                         <div class="input-group">
                             <input type="text" id="nis" name="nis" placeholder="Search..." aria-label="First name" class="form-control" autocomplete="off">
@@ -98,11 +98,11 @@
                     <div class="modal-body p-3 pt-0">
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="" id="orangtua" name="orangtua" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;}">
+                                <input class="form-check-input me-1" type="checkbox" value="" id="orangtua" name="orangtua" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="orangtua">Dijemput Orang Tua</label>
                             </li>
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="" id="antarjemput" name="antarjemput" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;}">
+                                <input class="form-check-input me-1" type="checkbox" value="" id="antarjemput" name="antarjemput" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="antarjemput">Ditunggu Team Antar Jemput</label>
                             </li>
                             <li class="list-group-item list-group-item-action">
@@ -117,6 +117,7 @@
                             <span class="input-group-text" id="basic-addon3"><i class="bi bi-link"></i></span>
                             <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
                         </div>
+                        <small><i>Cara mendapatkan Link Bagikan Perjalanan</i></small>
                         <div class="form-text" id="basic-addon4">
                             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 g-2">
                                 <div class="col">
@@ -150,6 +151,7 @@
                             </div>
                         </div>
                     </div>
+                    <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit" id="btnSubmit" value="Submit">Submit</button>
                 </form>
 
 
