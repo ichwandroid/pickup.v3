@@ -98,15 +98,15 @@
                     <div class="modal-body p-3 pt-0">
                         <ul class="list-group">
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="" id="orangtua" name="orangtua" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;myFunction();}">
+                                <input class="form-check-input me-1" type="checkbox" value="1" id="orangtua" name="status" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="orangtua">Dijemput Orang Tua</label>
                             </li>
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="" id="antarjemput" name="antarjemput" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;myFunction();}">
+                                <input class="form-check-input me-1" type="checkbox" value="2" id="antarjemput" name="status" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="antarjemput">Ditunggu Team Antar Jemput</label>
                             </li>
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="" id="ojol" name="ojol" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.orangtua.checked=false;myFunction();}">
+                                <input class="form-check-input me-1" type="checkbox" value="3" id="ojol" name="status" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.orangtua.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="ojol">Dijemput Ojek Online</label>
                             </li>
                         </ul>
@@ -157,9 +157,9 @@
                 </form>
 
                 <?php
-                include_once 'includes/db.php';
-                if (isset($_POST['submit'])) {
-                }
+                // include_once 'includes/db.php';
+                // if (isset($_POST['submit'])) {
+                // }
                 ?>
 
             </div>
@@ -207,6 +207,27 @@
             $('#nis').val(nis);
             $("#resultlist").html('');
         });
+
+        $("#altForm").submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: "post",
+                url: "includes/insert.php",
+                data: $(this).serialize(),
+            }).done(function(data) {
+                $("nis").val("");
+                $("#status").val("");
+                $("#basic-url").val("");
+                let text = data + " Data berhasil disimpan, ingin melihat statusnya? ";
+                if (confirm(text) == true) {
+                    window.location = "http://localhost/pickup.v3";
+                } else {
+                    window.location.reload();
+                }
+                // alert(data);
+                // window.location.reload();
+            })
+        })
     });
 </script>
 

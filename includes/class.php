@@ -96,4 +96,13 @@ class user extends db
 		}
 		return $out;
 	}
+
+	public function client($n, $s, $u)
+	{
+		$query = "INSERT INTO tbl_scan(NIS,STATUS,URL,TIMESCAN) VALUES(?,?,?,now()) ";
+		$stmt = $this->connect()->prepare($query);
+		if ($stmt->execute([$n, $s, $u])) {
+			echo "Alhamdulillah!";
+		}
+	}
 }
