@@ -86,7 +86,7 @@
                     <h2 class="fw-bold mb-0 fs-2">Pickup Student V.3</h2>
                 </div>
 
-                <form action="" name="formName" id="altForm" method="post">
+                <form action="" name="formName" id="altForm" method="post" enctype="multipart/form-data">
                     <div class="modal-body p-3 pt-0">
                         <div class="input-group">
                             <input type="text" id="nis" name="nis" placeholder="Search..." aria-label="First name" class="form-control" autocomplete="off">
@@ -115,7 +115,7 @@
                         <label for="basic-url" class="form-label">Link Bagikan Perjalanan</label>
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon3"><i class="bi bi-link"></i></span>
-                            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                            <input type="text" class="form-control" id="basic-url" name="basic-url" aria-describedby="basic-addon3 basic-addon4">
                         </div>
                         <small><i>Cara mendapatkan Link Bagikan Perjalanan</i></small>
                         <div class="form-text" id="basic-addon4">
@@ -152,10 +152,15 @@
                         </div>
                     </div>
                     <div class="modal-body p-3 pt-0">
-                        <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit" id="btnSubmit" value="Submit">Submit</button>
+                        <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit" id="btnSubmit" name="submit" value="Submit">Submit</button>
                     </div>
                 </form>
 
+                <?php
+                include_once 'includes/db.php';
+                if (isset($_POST['submit'])) {
+                }
+                ?>
 
             </div>
         </div>
