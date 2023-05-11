@@ -151,7 +151,9 @@
                             </div>
                         </div>
                     </div>
-                    <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit" id="btnSubmit" value="Submit">Submit</button>
+                    <div class="modal-body p-3 pt-0">
+                        <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit" id="btnSubmit" value="Submit">Submit</button>
+                    </div>
                 </form>
 
 

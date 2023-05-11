@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 11, 2023 at 09:10 AM
+-- Generation Time: May 11, 2023 at 09:55 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `pickup`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_scan`
+--
+
+CREATE TABLE `tbl_scan` (
+  `NIS` int(11) NOT NULL,
+  `STATUS` text NOT NULL,
+  `TIMESCAN` text NOT NULL,
+  `URL` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_scan`
+--
+
+INSERT INTO `tbl_scan` (`NIS`, `STATUS`, `TIMESCAN`, `URL`) VALUES
+(1608, '<span class=\"badge bg-danger-subtle border border-danger-subtle text-danger-emphasis rounded-pill\">Ditunggu Orang Tua</span>', '2023-05-11 14:54:25', '');
 
 -- --------------------------------------------------------
 
@@ -688,6 +708,16 @@ INSERT INTO `tbl_siswa` (`NIS`, `NAMA_LENGKAP`, `KELAS`, `NAMA_KELAS`, `PANGGILA
 (1198, 'SYAMMAKH \'AMMAR SAPUTRA', '6D', 'INISIATIF', ' SYAMMAKH '),
 (1200, 'TANIA NABILA HAFIZA', '6D', 'INISIATIF', ' NABILA '),
 (1202, 'WEISS AMADEA MARCHIA', '6D', 'INISIATIF', 'CHIA');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_scan`
+--
+ALTER TABLE `tbl_scan`
+  ADD PRIMARY KEY (`NIS`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
