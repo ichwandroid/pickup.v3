@@ -97,16 +97,17 @@
                     </div>
                     <div class="modal-body p-3 pt-0">
                         <ul class="list-group">
+
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="1" id="orangtua" name="status" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;myFunction();}">
+                                <input class="form-check-input me-1" type="checkbox" value='<span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">Dijemput Orang Tua</span>' id="orangtua" name="status" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.ojol.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="orangtua">Dijemput Orang Tua</label>
                             </li>
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="2" id="antarjemput" name="status" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;myFunction();}">
+                                <input class="form-check-input me-1" type="checkbox" value='<span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">Ditunggu Team Antar Jemput</span>' id="antarjemput" name="status" onclick="if(this.checked) {document.formName.orangtua.checked=false;document.formName.ojol.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="antarjemput">Ditunggu Team Antar Jemput</label>
                             </li>
                             <li class="list-group-item list-group-item-action">
-                                <input class="form-check-input me-1" type="checkbox" value="3" id="ojol" name="status" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.orangtua.checked=false;myFunction();}">
+                                <input class="form-check-input me-1" type="checkbox" value='<span class="badge d-flex align-items-center p-1 pe-2 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-pill">Dijemput Ojek Online</span>' id="ojol" name="status" onclick="if(this.checked) {document.formName.antarjemput.checked=false;document.formName.orangtua.checked=false;myFunction();}">
                                 <label class="form-check-label stretched-link" for="ojol">Dijemput Ojek Online</label>
                             </li>
                         </ul>
@@ -155,12 +156,6 @@
                         <button class="w-100 py-2 mb-2 btn btn-outline-info rounded-3" type="submit" id="btnSubmit" name="submit" value="Submit">Submit</button>
                     </div>
                 </form>
-
-                <?php
-                // include_once 'includes/db.php';
-                // if (isset($_POST['submit'])) {
-                // }
-                ?>
 
             </div>
         </div>

@@ -23,6 +23,18 @@ $show = mysqli_fetch_array($load, MYSQLI_ASSOC)
                         <input type="text" class="form-control rounded-3" placeholder="Student Name" value="<?php echo $show['NAMA_LENGKAP']; ?>" readonly>
                         <label for="floatingPassword">Student Name</label>
                     </div>
+                    <div class="form-floating mb-3">
+                        <div class="d-grid gap-2">
+                            <?php
+                            $url = $show['URL'];
+                            if (empty($url)) {
+                                echo 'hehe';
+                            } else {
+                                echo '<a href="' . $url . '" target="_blank" class="btn btn-success rounded-pill px-3">Lihat Posisi Driver</a>';
+                            }
+                            ?>
+                        </div>
+                    </div>
                     <hr class="my-4">
                     <div class="form-floating mb-3">
                         <div class="list-group list-group-radio d-grid gap-2 border-0">
